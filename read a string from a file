@@ -1,0 +1,18 @@
+#include <stdio.h>
+int main()
+{
+    FILE *fpr;
+    char str[100];
+    fpr = fopen("C:\\mynewtextfile.txt", "r");
+    if (fpr == NULL)
+       puts("Issue in opening the input file");
+    while(1)
+    {
+       if(fgets(str, 10, fpr) ==NULL)
+            break;
+       else
+            printf("%s", str);
+    }
+    fclose(fpr);
+    return 0;
+}
